@@ -10,7 +10,13 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class NavigationComponent {
 
-  public currentRoute: string;  
+  public links = [
+    { name: 'Acceuil', route: '/', icon: 'home' },
+    { name: 'Compétences', route: '/skills', icon: 'code' },
+    { name: 'Projets', route: '/projects', icon: 'view_carousel' },
+    { name: 'Formations', route: '/formations', icon: 'school' },
+    { name: 'Expériences', route: '/experiences', icon: 'developer_mode' }
+  ];
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -18,19 +24,6 @@ export class NavigationComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {
-    this.currentRoute = document.location.pathname;
-
-    if(this.currentRoute === '/' || this.currentRoute === '') {
-      this.currentRoute = 'home';
-      
-    } else {
-      this.currentRoute = this.currentRoute.replace('/', '');
-    }
-  }
-
-  setCurrentRoute(route: string): void {
-    this.currentRoute = route;
-  }
+  constructor(private breakpointObserver: BreakpointObserver) {}
   
 }

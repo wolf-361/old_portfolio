@@ -1,3 +1,4 @@
+// General styles for the navigation component
 .sidenav-container {
   height: 100%;
 }
@@ -14,4 +15,22 @@
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+
+// Making it look like a terminal a bit
+a.active-link span::after {
+  content: " > $";
+  font-size: inherit;
+  font-weight: bold;  
+  animation: blink 1.5s step-end infinite;
+}
+
+@keyframes blink {
+  0% {
+      color: white;
+  }
+  50% {
+      color: #131517;
+  }
 }

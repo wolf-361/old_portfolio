@@ -1,28 +1,48 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+  <mat-sidenav #drawer class="sidenav mat-elevation-z8" fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+
+    <!-- Entête sidenav -->
+    <div class="flex-column">
+      <img src="../../../assets/images/profile_discord.png" alt="profile" class="img-fluid p-3 mx-auto rounded">
+    </div>
+
+    <!-- Nav links-->
     <mat-nav-list>
-      <a mat-list-item [ngClass]="{'current-link' : this.currentRoute == 'home'}" routerLink="/"
-        routerLinkActive="active" (click)="setCurrentRoute('home')">Acceuil</a>
-      <a mat-list-item [ngClass]="{'current-link' : this.currentRoute == 'skills'}" routerLink="/skills"
-        routerLinkActive="active" (click)="setCurrentRoute('skills')">Compétences</a>
-      <a mat-list-item [ngClass]="{'current-link' : this.currentRoute == 'projects'}" routerLink="/projects"
-        routerLinkActive="active" (click)="setCurrentRoute('projects')">Projets</a>
-      <a mat-list-item [ngClass]="{'current-link' : this.currentRoute == 'formation'}" routerLink="/formation"
-        routerLinkActive="active" (click)="setCurrentRoute('formation')">Formations</a>
-      <a mat-list-item [ngClass]="{'current-link' : this.currentRoute == 'experiences'}" routerLink="/experiences"
-        routerLinkActive="active" (click)="setCurrentRoute('experiences')">Expériences</a>
-      <a mat-list-item href="../../../assets/cv_fr_luc_allaire.pdf" target="_blank">CV (PDF)</a>      
+      <a *ngFor="let link of links" mat-list-item [routerLink]="link.route" routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true}">
+        <mat-icon class="m-1 align-middle"> {{link.icon}} </mat-icon> <span
+          class="m-1 align-middle">{{link.name}}</span>
+      </a>
+      <a mat-list-item href="../../../assets/cv_fr_luc_allaire.pdf" target="_blank">
+        <mat-icon class="m-2 align-middle">domain</mat-icon><span class="m-2 align-middle">CV (PDF)</span></a>
     </mat-nav-list>
+
+    <!-- Nav Footer -->
+    <div class="flex-column">
+      <div class="d-flex flex-row justify-content-center">
+        <a href="" target="_blank" class="p-2">
+          <img src="../../../assets/images/github.png" alt="github" class="img-fluid">
+        </a>
+        <a href="" target="_blank" class="p-2">
+          <img src="../../../assets/images/linkedin.png" alt="linkedin" class="img-fluid">
+        </a>
+      </div>
+    </div>
+
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <!-- top bar -->
+    <mat-toolbar color="primary" class="mat-elevation-z8">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>portfolio</span>
+      <div class="d-flex flex-row">
+        <h4 class="p-2">$ Luc Allaire</h4>
+        <h5 class="p-2"><em class="align-middle">Étudiant en informatique à l'UQTR</em></h5>
+      </div>
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>

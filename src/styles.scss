@@ -20,7 +20,7 @@ $portfolio-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$portfolio-theme: mat.define-light-theme((
+$portfolio-theme: mat.define-dark-theme((
   color: (
     primary: $portfolio-primary,
     accent: $portfolio-accent,
@@ -37,3 +37,6 @@ $portfolio-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
