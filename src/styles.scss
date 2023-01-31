@@ -8,31 +8,19 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+// Import the theme
+@import "./theme.scss";
 
-// dark theme
-$dark-theme: mat.define-dark-theme((
-  color: (
-    primary: mat.define-palette(mat.$purple-palette),
-    accent: mat.define-palette(mat.$blue-grey-palette),
-  ),
-  typography: mat.define-typography-config(),
-  density: 0,
-));
+// Applique le thème clair par défaut
+@include mat.all-component-themes($light-theme);
 
-// light theme
-$light-theme: mat.define-light-theme((
-  color: (
-   primary: mat.define-palette(mat.$indigo-palette),
-   accent: mat.define-palette(mat.$pink-palette),
- ),
-));
+// Applique le thème sombre si l'utilisateur le préfère
+@media (prefers-color-scheme: dark) {
+  @include mat.all-component-themes($dark-theme);
+}
 
-// Applique le thème sombre par défaut
-@include mat.all-component-themes($dark-theme);
-
-// Applique le thème clair si l'utilisateur le préfère
-@media (prefers-color-scheme: light) {
-  @include mat.all-component-themes($light-theme);
+.dark-theme {
+  @include mat.all-component-themes($dark-theme);
 }
 
 /* You can add global styles to this file, and also import other style files */
