@@ -1,1 +1,6 @@
-<app-navigation></app-navigation>
+<div [ngClass]="{'dark-theme' : isDarkTheme | async}">
+    <div class="mat-app-background">
+        <app-navigation></app-navigation>
+    </div>
+</div>
+
