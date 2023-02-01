@@ -1,9 +1,5 @@
-#home-main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+.home {
+    height: 90%;
 }
 
 #title {
@@ -25,5 +21,7 @@
     
 @keyframes blink-caret {
     from, to { border-color: transparent }
-    50% { border-color: black; }
+    50% { border-color: inherit; }
 }
+
+

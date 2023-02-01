@@ -14,10 +14,9 @@
 // Applique le thème clair par défaut
 @include mat.all-component-themes($light-theme);
 
-
-
+// Ne pas utiliser all-component-themes pour le thème sombre, car cela duplique les styles
 .dark-theme {
-  @include mat.all-component-themes($dark-theme);
+  @include mat.all-component-colors($dark-theme);
 }
 
 /* You can add global styles to this file, and also import other style files */

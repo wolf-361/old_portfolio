@@ -33,33 +33,33 @@
 
   </mat-sidenav>
   <mat-sidenav-content>
-    <!-- top bar -->
-    <mat-toolbar color="primary" class="mat-elevation-z8">
-      <div class="grid p-2">
+    <div class="full-height">
+      <!-- top bar -->
+      <mat-toolbar color="primary" class="mat-elevation-z8">
         <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
           *ngIf="isHandset$ | async">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
-        <span>$ Luc Allaire</span>
-        <span><em>Étudiant en informatique à l'UQTR</em></span>        
+        <span class="d-none d-lg-flex">$ Luc Allaire - <em> Étudiant en informatique à l'UQTR</em></span>
         <!-- Spacer -->
-        <span id="test"></span>
-        
+        <span class="flex-spacer"></span>
+
         <!-- Dark theme switch -->
         <span *ngIf="isDarkTheme | async; else light">
-          <button mat-icon-button aria-label="Toggle dark theme" (click)="setDarkTheme(false)" >
-            <mat-icon>nightlight_round</mat-icon>              
-          </button>          
+          <button mat-icon-button aria-label="Toggle dark theme" (click)="setDarkTheme(false)">
+            <mat-icon>nightlight_round</mat-icon>
+          </button>
         </span>
         <ng-template #light>
-          <button mat-icon-button aria-label="Toggle dark theme" (click)="setDarkTheme(true)" >
-            <mat-icon>wb_sunny</mat-icon>              
+          <button mat-icon-button aria-label="Toggle dark theme" (click)="setDarkTheme(true)">
+            <mat-icon>wb_sunny</mat-icon>
           </button>
-        </ng-template>        
-      </div>
+        </ng-template>
 
-    </mat-toolbar>
-    <!-- Content from variable page here -->
-    <router-outlet></router-outlet>
+      </mat-toolbar>
+      <!-- Content from variable page here -->
+      <router-outlet></router-outlet>
+    </div>
+
   </mat-sidenav-content>
 </mat-sidenav-container>
