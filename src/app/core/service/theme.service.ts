@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class ThemeService {
+  // Observable qui permet de voir un changement de thème
   private _darkTheme = new Subject<boolean>();
   isDarkTheme = this._darkTheme.asObservable();
 

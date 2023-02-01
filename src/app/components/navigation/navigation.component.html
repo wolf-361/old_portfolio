@@ -35,22 +35,29 @@
   <mat-sidenav-content>
     <!-- top bar -->
     <mat-toolbar color="primary" class="mat-elevation-z8">
-      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <div class="d-flex flex-row">
-        <h4 class="p-2">$ Luc Allaire</h4>
-        <h5 class="p-2"><em class="align-middle">Étudiant en informatique à l'UQTR</em></h5>
+      <div class="grid p-2">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span>$ Luc Allaire</span>
+        <span><em>Étudiant en informatique à l'UQTR</em></span>        
+        <!-- Spacer -->
+        <span id="test"></span>
+        
+        <!-- Dark theme switch -->
+        <span *ngIf="isDarkTheme | async; else light">
+          <button mat-icon-button aria-label="Toggle dark theme" (click)="setDarkTheme(false)" >
+            <mat-icon>nightlight_round</mat-icon>              
+          </button>          
+        </span>
+        <ng-template #light>
+          <button mat-icon-button aria-label="Toggle dark theme" (click)="setDarkTheme(true)" >
+            <mat-icon>wb_sunny</mat-icon>              
+          </button>
+        </ng-template>        
       </div>
-      <!-- Spacer -->
 
-      <!-- Dark theme switch -->
-      <div class="d-flex justify-content-end align-middle">
-        <mat-icon>brightness_5</mat-icon>
-        <mat-slide-toggle [checked]="isDarkTheme | async" (change)="toggleDarkTheme($event.checked)"></mat-slide-toggle>
-        <mat-icon>brightness_3</mat-icon>
-      </div>
     </mat-toolbar>
     <!-- Content from variable page here -->
     <router-outlet></router-outlet>

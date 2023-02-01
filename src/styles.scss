@@ -14,10 +14,7 @@
 // Applique le thème clair par défaut
 @include mat.all-component-themes($light-theme);
 
-// Applique le thème sombre si l'utilisateur le préfère
-@media (prefers-color-scheme: dark) {
-  @include mat.all-component-themes($dark-theme);
-}
+
 
 .dark-theme {
   @include mat.all-component-themes($dark-theme);

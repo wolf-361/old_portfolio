@@ -17,7 +17,6 @@
   z-index: 1;
 }
 
-
 // Making it look like a terminal a bit
 a.active-link span::after {
   content: " > $";
@@ -33,4 +32,10 @@ a.active-link span::after {
   50% {
       color: #131517;
   }
+}
+
+// Styling the toolbar
+
+.flex-spacer {
+  flex: 1 1 auto;
 }

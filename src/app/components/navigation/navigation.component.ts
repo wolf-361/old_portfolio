@@ -28,16 +28,21 @@ export class NavigationComponent implements OnInit{
     );
 
   // Injection du service BreakpointObserver
-  constructor(private breakpointObserver: BreakpointObserver, private themeService: ThemeService) {}
+  constructor(private breakpointObserver: BreakpointObserver, private themeService: ThemeService) {
+    // Verifier si le theme est dark
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      this.themeService.setDarkTheme(true);
+    }
+  }
   
   // Dark mode toggle
-  isDarkTheme!: Observable<boolean>; // ! = non null assertion operator, permet de dire à typescript que la variable ne sera pas null à vérifier
+  isDarkTheme!: Observable<boolean>; // Observable qui permet de voir un changement de thème#
 
   ngOnInit() {
     this.isDarkTheme = this.themeService.isDarkTheme;
   }
 
-  toggleDarkTheme(checked: boolean) {
+  setDarkTheme(checked: boolean) {
     this.themeService.setDarkTheme(checked);
   }
 }
