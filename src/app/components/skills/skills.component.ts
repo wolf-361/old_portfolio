@@ -7,13 +7,23 @@ import { Component } from '@angular/core';
 })
 export class SkillsComponent {
     public devSkills = [
-        { name: 'HTML5', iconpath: '../assets/icons/html.ico' },
-        { name: 'CSS3', iconpath: '../assets/icons/css3.ico' },
-        { name: 'JavaScript', iconpath: '../assets/icons/javascript.ico' },
-        { name: 'TypeScript', iconpath: '../assets/icons/typescript.ico' },
-        { name: 'Angular', iconpath: '../assets/icons/angular.ico' },
-        { name: 'Node.js', iconpath: '../assets/icons/nodejs.ico' },
+        { title: 'HTML5', iconpath: '../assets/icons/html.ico' },
+        { title: 'CSS3', iconpath: '../assets/icons/css3.ico' },
+        { title: 'JavaScript', iconpath: '../assets/icons/javascript.ico' },
+        { title: 'TypeScript', iconpath: '../assets/icons/typescript.ico' },
+        { title: 'Angular', iconpath: '../assets/icons/angular.ico' },
     ];
 
+    public networkSkills = [
+        { title: 'TCP/IP', iconpath: '../assets/icons/tcpip.ico' },
+    ];
+
+    public toolSkills = [
+        { title: 'Git', iconpath: '../assets/icons/git.ico' },
+    ];
+
+    public langagesSkills = [
+        { title: 'Français', iconpath: '../assets/icons/france.ico' },
+    ];
         
 }

@@ -21,6 +21,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { IconsComponent } from './components/general/icons/icons.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     ProjectsComponent,
     SkillsComponent,
     NavigationComponent,
+    IconsComponent,
   ],
   imports: [
     BrowserModule,

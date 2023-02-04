@@ -1,24 +1,24 @@
 <div class="d-flex p-5 justify-content-center align-items-center h-90">
-    <mat-tab-group class="p-5 mat-elevation-z10 skills">
+    <mat-tab-group class="p-5 mat-elevation-z10 h-75 w-75"> <!-- TODO put 75% only on desktop-->
         <mat-tab label="Développement" class="mat-elevation-z11">
-            <div class="p-5 d-flex flex-wrap">
-                <div *ngFor="let skill of devSkills">
-                    <div class="mat-elevation-z2 card-skills align-content-center justify-content-center text-center">
-                        <div>
-                            <img [src]="skill.iconpath" [alt]="skill.name" class="skill-icon mx-auto my-auto">
-                        </div>
-                        <div class="mat-badge align-bottom">
-                            {{ skill.name }}
-                        </div>
-                    </div>
-                </div>
+            <div class="p-5 d-flex flex-wrap skill-section">
+                <app-icons *ngFor="let skill of devSkills" class="m-2 mat-elevation-z3" [title]="skill.title" [iconPath]="skill.iconpath"></app-icons>
             </div>
         </mat-tab>
         <mat-tab label="Réseaux">
+            <div class="p-5 d-flex flex-wrap skill-section">
+                <app-icons *ngFor="let skill of networkSkills" class="m-2 mat-elevation-z3" [title]="skill.title" [iconPath]="skill.iconpath"></app-icons>
+            </div>
         </mat-tab>
         <mat-tab label="Outils">
+            <div class="p-5 d-flex flex-wrap skill-section">
+                <app-icons *ngFor="let skill of toolSkills" class="m-2 mat-elevation-z3" [title]="skill.title" [iconPath]="skill.iconpath"></app-icons>
+            </div>
         </mat-tab>
-        <mat-tab label="langues">#
+        <mat-tab label="langues">
+            <div class="p-5 d-flex flex-wrap skill-section">
+                <app-icons *ngFor="let skill of langagesSkills" class="m-2 mat-elevation-z3" [title]="skill.title" [iconPath]="skill.iconpath"></app-icons>
+            </div>
         </mat-tab>
     </mat-tab-group>
 </div>
