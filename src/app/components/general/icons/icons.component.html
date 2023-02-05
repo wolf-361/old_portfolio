@@ -1,0 +1,10 @@
+<div class="icon-container">
+    <div class="icon-image-container">
+        <a *ngIf="this.url !== ''" [href]="this.url" target="_blank">
+        <img class="icon" [src]="iconPath" [alt]="this.title"/>
+        </a>
+        <img *ngIf="this.url == ''" class="icon-no-url" [src]="iconPath" [alt]="this.title"/>
+    </div> 
+    <a *ngIf="this.url !== ''"[href]="this.url" class="icon-title">{{this.title}}</a>
+    <span *ngIf="this.url == ''" class="icon-title">{{this.title}}</span>
+</div>

@@ -1,76 +1,24 @@
 <div class="d-flex p-5 justify-content-center align-items-center h-90">
-    <mat-tab-group class="p-5 mat-elevation-z10 skills">
-    <mat-tab label="Langages" class="mat-elevation-z11">
-        <div class="p-5">
-            <mat-grid-list cols="3" rowHeight="100px">
-                <mat-grid-tile>
-                    <mat-card class="mat-elevation-z10">    
-                        <mat-card-header>
-                            <mat-card-title>HTML5</mat-card-title>
-                        </mat-card-header>
-                        <mat-card-content>
-                            <mat-progress-bar mode="determinate" value="90"></mat-progress-bar>
-                        </mat-card-content>
-                    </mat-card>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <mat-card class="mat-elevation-z10">
-                        <mat-card-header>
-                            <mat-card-title>CSS3</mat-card-title>
-                        </mat-card-header>
-                        <mat-card-content>
-                            <mat-progress-bar mode="determinate" value="90"></mat-progress-bar>
-                        </mat-card-content>
-                    </mat-card>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <mat-card class="mat-elevation-z10">
-                        <mat-card-header>
-                            <mat-card-title>JavaScript</mat-card-title>
-                        </mat-card-header>
-                        <mat-card-content>
-                            <mat-progress-bar mode="determinate" value="80"></mat-progress-bar>
-                        </mat-card-content>
-                    </mat-card>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <mat-card class="mat-elevation-z10">
-                        <mat-card-header>
-                            <mat-card-title>TypeScript</mat-card-title>
-                        </mat-card-header>
-                        <mat-card-content>
-                            <mat-progress-bar mode="determinate" value="80"></mat-progress-bar>
-                        </mat-card-content>
-                    </mat-card>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <mat-card class="mat-elevation-z10">
-                        <mat-card-header>
-                            <mat-card-title>PHP</mat-card-title>
-                        </mat-card-header>
-                        <mat-card-content>
-                            <mat-progress-bar mode="determinate" value="70"></mat-progress-bar>
-                        </mat-card-content>
-                    </mat-card>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <mat-card class="mat-elevation-z10">
-                        <mat-card-header>
-                            <mat-card-title>SQL</mat-card-title>
-                        </mat-card-header>
-                        <mat-card-content>
-                            <mat-progress-bar mode="determinate" value="70"></mat-progress-bar>
-                        </mat-card-content>
-                    </mat-card>
-                </mat-grid-tile>
-            </mat-grid-list>
-        </div>
-    </mat-tab>
-    <mat-tab label="Frameworks">
-    </mat-tab>
-    <mat-tab label="Bibliothèques">
-    </mat-tab>
-    <mat-tab label="Autres">
-    </mat-tab>
-</mat-tab-group>
+    <mat-tab-group class="p-5 mat-elevation-z10 h-75 w-75"> <!-- TODO put 75% only on desktop-->
+        <mat-tab label="Développement" class="mat-elevation-z11">
+            <div class="p-5 d-flex flex-wrap skill-section">
+                <app-icons *ngFor="let skill of devSkills" class="m-2 mat-elevation-z3" [title]="skill.title" [iconPath]="skill.iconpath"></app-icons>
+            </div>
+        </mat-tab>
+        <mat-tab label="Réseaux">
+            <div class="p-5 d-flex flex-wrap skill-section">
+                <app-icons *ngFor="let skill of networkSkills" class="m-2 mat-elevation-z3" [title]="skill.title" [iconPath]="skill.iconpath"></app-icons>
+            </div>
+        </mat-tab>
+        <mat-tab label="Outils">
+            <div class="p-5 d-flex flex-wrap skill-section">
+                <app-icons *ngFor="let skill of toolSkills" class="m-2 mat-elevation-z3" [title]="skill.title" [iconPath]="skill.iconpath"></app-icons>
+            </div>
+        </mat-tab>
+        <mat-tab label="langues">
+            <div class="p-5 d-flex flex-wrap skill-section">
+                <app-icons *ngFor="let skill of langagesSkills" class="m-2 mat-elevation-z3" [title]="skill.title" [iconPath]="skill.iconpath"></app-icons>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
 </div>
