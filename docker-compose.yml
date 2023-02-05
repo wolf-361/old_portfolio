@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+   frontend:
+       build: .
+       restart: always
+       ports:
+          - 127.0.0.1:10000:80
