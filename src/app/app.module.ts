@@ -21,6 +21,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { IconsComponent } from './components/general/icons/icons.component';
 
 @NgModule({
@@ -49,6 +50,7 @@ import { IconsComponent } from './components/general/icons/icons.component';
     MatTabsModule,
     MatGridListModule,
     MatProgressBarModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
