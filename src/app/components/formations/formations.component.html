@@ -1,1 +1,28 @@
-<p>formations works!</p>
+<div class="d-flex justify-content-center m-3 m-md-2">
+    <h1 id="form-title">Formations</h1>
+</div>
+<div class="d-flex p-1 justify-content-center ">
+    <div class="col-12 col-md-8">
+        <div *ngFor="let form of formations">
+            <mat-card class="m-5 m-md-4">
+                <div class="row">
+                    <div class="col-2">
+                        <app-icons [title]="form.iconTitle" [iconPath]="form.iconPath" [url]="form.link"></app-icons>
+                    </div>
+                    <div class="col-10">
+                        <mat-card-header class="p-3 align-items-baseline">
+                            <mat-card-title class="form-title">{{form.title}}</mat-card-title>
+                            <span class="flex-fill"></span>
+                            <span class="form-date">{{form.date}}</span>
+                            <mat-card-subtitle>{{form.subtitle}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p class="form-description" *ngIf="form.description != ''">{{form.description}}</p>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+
+</div>
