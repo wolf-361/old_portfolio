@@ -10,12 +10,12 @@ WORKDIR /app
 COPY . .
 
 # Install all the dependencies and Generate the build of the application
-RUN npm i && npm run build
+RUN npm install && npm run build
 
 # Second stage: serve the app
 
 # Use nginx image as the base image
-FROM nginx:alpine
+FROM nginx:latest
 
 # Copy nginx config (if needed)
 # COPY nginx.conf /etc/nginx/conf.d/default.conf
