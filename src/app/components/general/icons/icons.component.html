@@ -5,6 +5,6 @@
         </a>
         <img *ngIf="this.url == ''" class="icon-no-url" [src]="iconPath" [alt]="this.title"/>
     </div> 
-    <a *ngIf="this.url !== ''"[href]="this.url" class="icon-title">{{this.title}}</a>
+    <a *ngIf="this.url !== ''" [href]="this.url" target="_blank" class="icon-title">{{this.title}}</a>
     <span *ngIf="this.url == ''" class="icon-title">{{this.title}}</span>
 </div>
