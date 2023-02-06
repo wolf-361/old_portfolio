@@ -22,10 +22,10 @@
     <!-- Nav Footer -->
     <div class="flex-column">
       <div class="d-flex flex-row justify-content-center">
-        <a href="https://github.com/wolf-361" target="_blank" class="p-2">
+        <a matTooltip="Mon Github" href="https://github.com/wolf-361" target="_blank" class="p-2">
           <img src="../../../assets/images/github.png" alt="github" class="img-fluid">
         </a>
-        <a href="https://www.linkedin.com/in/wolf361/" target="_blank" class="p-2">
+        <a matTooltip="Mon LinkedIn" href="https://www.linkedin.com/in/wolf361/" target="_blank" class="p-2">
           <img src="../../../assets/images/linkedin.png" alt="linkedin" class="img-fluid">
         </a>
       </div>
@@ -42,16 +42,16 @@
         </button>
         <span class="d-none d-lg-flex">$ Luc Allaire - <em> Étudiant en informatique à l'UQTR</em></span>
         <!-- Spacer -->
-        <span class="flex-spacer"></span>
+        <span class="flex-fill"></span>
 
         <!-- Dark theme switch -->
         <span *ngIf="isDarkTheme | async; else light">
-          <button mat-icon-button aria-label="Toggle dark theme" (click)="setDarkTheme(false)">
+          <button mat-icon-button aria-label="Toggle dark theme" matTooltip="Passer en mode sombre" matTooltipPosition="below" (click)="setDarkTheme(false)">
             <mat-icon>nightlight_round</mat-icon>
           </button>
         </span>
         <ng-template #light>
-          <button mat-icon-button aria-label="Toggle dark theme" (click)="setDarkTheme(true)">
+          <button mat-icon-button aria-label="Toggle light theme" matTooltip="Passer en mode clair" matTooltipPosition="below" (click)="setDarkTheme(true)">
             <mat-icon>wb_sunny</mat-icon>
           </button>
         </ng-template>

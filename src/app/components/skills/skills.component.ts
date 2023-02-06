@@ -12,18 +12,34 @@ export class SkillsComponent {
         { title: 'JavaScript', iconpath: '../assets/icons/javascript.ico' },
         { title: 'TypeScript', iconpath: '../assets/icons/typescript.ico' },
         { title: 'Angular', iconpath: '../assets/icons/angular.ico' },
+        { title: 'Java', iconpath: '../assets/icons/java.ico' },
+        { title: 'C', iconpath: '../assets/icons/c.ico' },
+        { title: 'C++', iconpath: '../assets/icons/cpp.ico' },
+        { title: 'Python', iconpath: '../assets/icons/python.ico' },
+        { title: 'PHP', iconpath: '../assets/icons/php.ico' },
+        { title: 'SQL', iconpath: '../assets/icons/sql.ico' },
+        { title: 'Bootstrap', iconpath: '../assets/icons/bootstrap.ico' },
+        { title: 'Material Design', iconpath: '../assets/icons/materialdesign.ico' },
+
     ];
 
-    public networkSkills = [
-        { title: 'TCP/IP', iconpath: '../assets/icons/tcpip.ico' },
+    public networkSkills = [        
+        { title: 'Docker', iconpath: '../assets/icons/docker.ico' },
+        { title: 'Linux', iconpath: '../assets/icons/linux.ico' },
+        { title: 'DNS/DHCP', iconpath: '../assets/icons/server.ico' },
+
     ];
 
     public toolSkills = [
-        { title: 'Git', iconpath: '../assets/icons/git.ico' },
+        { title: 'GitHub', iconpath: '../assets/icons/github.ico' },
+        { title: 'Visual Studio', iconpath: '../assets/icons/vs.png' },
+        { title: 'VS Code', iconpath: '../assets/icons/vscode.png' },
+        { title: 'IntelliJ', iconpath: '../assets/icons/intellij.png' },
     ];
 
     public langagesSkills = [
         { title: 'Français', iconpath: '../assets/icons/france.ico' },
+        { title: 'English', iconpath: '../assets/icons/canada.ico' },
     ];
         
 }
