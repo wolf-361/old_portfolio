@@ -9,11 +9,13 @@
                     <mat-card-title class="exp-title">{{project.title}}</mat-card-title>
                     <span class="flex-fill"></span>
                     <div class="d-flex">
-                        <a *ngIf="project.link != null" href="{{project.link}}" target="_blank" matTooltip="Liens à une démo live">
-                            <mat-icon class="mr-2 ml-2">link</mat-icon>
+                        <a *ngIf="project.link != null" href="{{project.link}}" target="_blank"
+                            matTooltip="Liens à une au site web ou à une démo">
+                            <mat-icon class="mx-2">link</mat-icon>
                         </a>
-                        <a *ngIf="project.github != null" href="{{project.github}}" target="_blank" matTooltip="Lien au GitHub du projet">
-                            <mat-icon class="mr-2">code</mat-icon>
+                        <a *ngIf="project.github != null" href="{{project.github}}" target="_blank"
+                            matTooltip="Lien au GitHub du projet">
+                            <mat-icon class="mx-2">code</mat-icon>
                         </a>
                     </div>
                 </mat-card-header>
@@ -24,18 +26,18 @@
                             <li *ngFor="let item of project.list">{{item}}</li>
                         </ul>
                     </div>
-                    <div *ngIf="project.skills != null"> 
+                    <div *ngIf="project.skills != null">
                         <h4>Compétences mobilisés</h4>
-                        <div *ngFor="let skill of project.skills">
-                        <app-icons class="m-2 mat-elevation-z3" [title]="skill.title"
-                            [iconPath]="skill.iconPath"></app-icons>
+                        <div class="p-5 d-flex flex-wrap skill-section">
+                            <app-icons *ngFor="let skill of project.skills" class="m-2 mat-elevation-z3" [title]="skill.title"
+                                [iconPath]="skill.iconPath"></app-icons>
+                        </div>
                     </div>
-                    </div>
-                    
+
                 </mat-card-content>
                 <mat-card-footer>
                     <div class="d-flex justify-content-between">
-                        
+
                     </div>
                 </mat-card-footer>
             </mat-card>
