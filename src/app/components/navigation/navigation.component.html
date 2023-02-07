@@ -46,13 +46,15 @@
 
         <!-- Dark theme switch -->
         <span *ngIf="isDarkTheme | async; else light">
-          <button mat-icon-button aria-label="Toggle dark theme" matTooltip="Passer en mode sombre" matTooltipPosition="below" (click)="setDarkTheme(false)">
-            <mat-icon>nightlight_round</mat-icon>
+          <button mat-icon-button aria-label="Toggle light theme" matTooltip="Passer en mode clair"
+            matTooltipPosition="below" (click)="setDarkTheme(false)">
+            <mat-icon>wb_sunny</mat-icon>
           </button>
         </span>
         <ng-template #light>
-          <button mat-icon-button aria-label="Toggle light theme" matTooltip="Passer en mode clair" matTooltipPosition="below" (click)="setDarkTheme(true)">
-            <mat-icon>wb_sunny</mat-icon>
+          <button mat-icon-button aria-label="Toggle dark theme" matTooltip="Passer en mode sombre"
+            matTooltipPosition="below" (click)="setDarkTheme(true)">
+            <mat-icon>nightlight_round</mat-icon>
           </button>
         </ng-template>
 
@@ -60,6 +62,5 @@
       <!-- Content from variable page here -->
       <router-outlet></router-outlet>
     </div>
-
   </mat-sidenav-content>
 </mat-sidenav-container>
