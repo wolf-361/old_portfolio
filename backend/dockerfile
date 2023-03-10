@@ -6,8 +6,8 @@ WORKDIR /app
 # Copy all the files from the current directory to the working directory
 COPY . .
 
-# Install all the dependencies and Generate the build of the application
-RUN npm install --prefix ./ && npm run build --prefix ./
+# Install all the dependencies
+RUN npm install --prefix ./ 
 
 # Second stage: serve the app
 CMD [ "node", "index.js" ]
