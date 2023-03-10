@@ -1,1 +1,14 @@
-<p>contact works!</p>
+<div id="contact-content">
+    <h1 id="contact-title">Contact</h1>
+    
+    <div *ngIf="this.resolved === false" id="form-container">
+        <h3 id="warning">Pour des raisons de sécurité, merci de remplir <br>le captcha afin de voir mon adresse mail</h3>
+        <form #form="ngForm">
+            <re-captcha id="recaptcha" [theme]="'dark'" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha> 
+        </form>
+        <button id="email-button" (click)="send(form)">Voir l'adresse email</button>
+    </div>
+    <div *ngIf="this.resolved === true"  id="email-container">
+        <h3 id="email">Email : {{this.emailAdress}}</h3>
+    </div>
+</div>
