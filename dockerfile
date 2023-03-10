@@ -18,7 +18,7 @@ RUN npm install && npm run build
 FROM nginx:latest
 
 # Copy nginx config (if needed)
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Set working directory to nginx asset directory
 WORKDIR /usr/share/nginx/html
