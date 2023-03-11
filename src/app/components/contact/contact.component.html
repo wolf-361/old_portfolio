@@ -4,11 +4,11 @@
     <div *ngIf="!resolved; else email" class="d-flex flex-column justify-content-center align-items-center">
         <h3 class="m-4">Pour des raisons de sécurité, merci de remplir <br>le captcha afin de voir mon adresse mail</h3>
         <form #form="ngForm">
-            <re-captcha id="recaptcha" *ngIf="isDarkTheme | async; else dark" theme="light" #recaptcha="ngModel"
+            <re-captcha id="recaptcha" *ngIf="isDarkTheme | async; else light" theme="dark" #recaptcha="ngModel"
                 [ngModel]="token" required
                 [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
-            <ng-template #dark>
-                <re-captcha id="recaptcha" theme="dark" #recaptcha="ngModel" [ngModel]="token" required
+            <ng-template #light>
+                <re-captcha id="recaptcha" theme="light" #recaptcha="ngModel" [ngModel]="token" required
                     [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
             </ng-template>
         </form>
