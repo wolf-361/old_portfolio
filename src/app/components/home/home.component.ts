@@ -11,6 +11,15 @@ function delay(ms: number) {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  public sentences = [
+    "mon portfolio",
+    "mon CV",
+    "mes projets",
+    "mes compétences",
+    "mes expériences",
+    "mon contact",
+  ];
+
   constructor() {
     // Permet d'attendre que le DOM soit chargé pour écrire la phrase
     document.addEventListener("DOMContentLoaded", async () => {
@@ -20,12 +29,6 @@ export class HomeComponent {
 
   // Permet d'écrire une phrase caractère par caractère
   private async writeSentence() {
-    let sentences = [
-      "mon portfolio",
-      "mon CV",
-      "mes projets",
-      "mon contact"
-    ];
 
     var currentSentence = 0;
     var insertedLetter = 0;
@@ -35,21 +38,21 @@ export class HomeComponent {
 
       let text = document!.getElementById("changing-text");
       if(text == null) return;
-      text.innerText = sentences[currentSentence].substring(0, insertedLetter);
+      text.innerText = this.sentences[currentSentence].substring(0, insertedLetter);
       insertedLetter++;
-      if (insertedLetter > sentences[currentSentence].length) {
+      if (insertedLetter > this.sentences[currentSentence].length) {
           await delay(2000);
 
           // Suppression de la phrase caractère par caractère
           while (insertedLetter >= 0) {
-              text.innerText = sentences[currentSentence].substring(0, insertedLetter);
+              text.innerText = this.sentences[currentSentence].substring(0, insertedLetter);
               insertedLetter--;
               await delay(100);
           }
 
           currentSentence++;
           insertedLetter = 0;
-          if (currentSentence >= sentences.length) {
+          if (currentSentence >= this.sentences.length) {
               currentSentence = 0;
           }
 
