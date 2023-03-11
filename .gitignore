@@ -41,7 +41,9 @@ testem.log
 .DS_Store
 Thumbs.db
 
-
 # Environment variables
 **/.env
 **/env.ts
+
+# IDE
+**/.vscode
