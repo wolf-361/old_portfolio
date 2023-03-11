@@ -4,18 +4,19 @@
 <div class="d-flex p-1 justify-content-center ">
     <div class="col-12 col-md-8">
         <div *ngFor="let exp of experiences">
-            <mat-card class="m-5 m-md-4">
+            <mat-card class="m-3 m-md-4">
                 <mat-card-header class="p-3 align-items-baseline">
-                    <mat-card-title class="exp-title">{{exp.title}}</mat-card-title>
+                    <mat-card-title class="exp-title text-center">{{exp.title}}</mat-card-title>
                     <span class="flex-fill"></span>
-                    <span class="exp-date">{{exp.date}}</span>
+                    <span class="exp-date d-none d-md-block">{{exp.date}}</span>
                 </mat-card-header>
                 <mat-card-content>
+                    <p class="exp-date d-block d-md-none text-center">{{exp.date}}</p>
                     <div class="row">
-                        <div class="col-2">
-                            <app-icons [title]="exp.iconTitle" [iconPath]="exp.iconPath" [url]="exp.link"></app-icons>
+                        <div class="col-lg-2">
+                            <app-icons [title]="exp.iconTitle" [iconPath]="exp.iconPath" [url]="exp.link"></app-icons>                            
                         </div>
-                        <div class="col-10 my-auto">
+                        <div class="col-lg-10 my-auto">
                             <p class="exp-description">{{exp.description}}</p>
                             <ul *ngIf="exp.list != null">
                                 <li *ngFor="let item of exp.list">{{item}}</li>
