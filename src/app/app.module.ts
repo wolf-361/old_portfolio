@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { FormsModule } from '@angular/forms';
+import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,6 +27,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { IconsComponent } from './components/general/icons/icons.component';
 import { ContactComponent } from './components/contact/contact.component';
+
+import { env } from './env';
 
 @NgModule({
   declarations: [
@@ -53,8 +58,16 @@ import { ContactComponent } from './components/contact/contact.component';
     MatGridListModule,
     MatProgressBarModule,
     MatTooltipModule,
+    FormsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
-  providers: [],
+  providers: [ {
+    provide: RECAPTCHA_SETTINGS,
+    useValue: {
+      siteKey: env.recaptcha.siteKey,
+    } as RecaptchaSettings,
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -17,7 +17,8 @@ export class NavigationComponent implements OnInit{
     { name: 'Compétences', route: '/skills', icon: 'code' },
     { name: 'Projets', route: '/projects', icon: 'view_carousel' },
     { name: 'Formations', route: '/formations', icon: 'school' },
-    { name: 'Expériences', route: '/experiences', icon: 'developer_mode' }
+    { name: 'Expériences', route: '/experiences', icon: 'developer_mode' },
+    { name: 'Contact', route: '/contact', icon: 'contact_mail'},
   ];
 
   // Breakpoint pour afficher le menu en mode mobile
