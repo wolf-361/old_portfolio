@@ -1,14 +1,14 @@
-<div id="contact-content">
+<div class="d-flex p-2 h-75 align-items-center flex-column justify-content-center">
     <h1 id="contact-title">Contact</h1>
     
-    <div *ngIf="this.resolved === false" id="form-container">
-        <h3 id="warning">Pour des raisons de sécurité, merci de remplir <br>le captcha afin de voir mon adresse mail</h3>
+    <div *ngIf="this.resolved === false" class="d-flex flex-column justify-content-center align-items-center">
+        <h3 class="m-5">Pour des raisons de sécurité, merci de remplir <br>le captcha afin de voir mon adresse mail</h3>
         <form #form="ngForm">
             <re-captcha id="recaptcha" [theme]="'dark'" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha> 
         </form>
-        <button id="email-button" (click)="send(form)">Voir l'adresse email</button>
+        <button (click)="send(form)" class="m-3" mat-raised-button color="primary">Voir l'adresse email</button>
     </div>
-    <div *ngIf="this.resolved === true"  id="email-container">
+    <div *ngIf="this.resolved === true" class="d-flex flex-column justify-content-center align-items-center">
         <h3 id="email">Email : {{this.emailAdress}}</h3>
     </div>
 </div>

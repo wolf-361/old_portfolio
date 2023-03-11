@@ -28,7 +28,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { IconsComponent } from './components/general/icons/icons.component';
 import { ContactComponent } from './components/contact/contact.component';
 
-import { env } from '../env';
+import { env } from './env';
 
 @NgModule({
   declarations: [

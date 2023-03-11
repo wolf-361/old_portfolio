@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { env } from '../../../env';
+import { env } from '../../env';
 import axios, { Axios } from 'axios';
 
 @Component({
