@@ -4,7 +4,8 @@
     <div *ngIf="this.resolved === false" class="d-flex flex-column justify-content-center align-items-center">
         <h3 class="m-5">Pour des raisons de sécurité, merci de remplir <br>le captcha afin de voir mon adresse mail</h3>
         <form #form="ngForm">
-            <re-captcha id="recaptcha" [theme]="'dark'" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha> 
+            <re-captcha id="recaptcha" [ngIf]="isDarkTheme" [theme]="'dark'" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha> 
+            <re-captcha id="recaptcha" [ngIf]="!isDarkTheme" [theme]="'light'" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha> 
         </form>
         <button (click)="send(form)" class="m-3" mat-raised-button color="primary">Voir l'adresse email</button>
     </div>

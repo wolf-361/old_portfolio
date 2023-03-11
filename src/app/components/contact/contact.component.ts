@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ThemeService } from 'src/app/core/service/theme.service';
 import { NgForm } from '@angular/forms';
 
 import { env } from '../../env';
@@ -13,9 +15,14 @@ export class ContactComponent {
   public token: string|undefined;
   public resolved: boolean = false;
   public emailAdress: string = "Bien essayé :)";
+  isDarkTheme!: Observable<boolean>;
 
-  constructor() {
+  constructor(private themeService: ThemeService) {
     this.token = undefined;
+  }
+
+  ngOnInit() {
+    this.isDarkTheme = this.themeService.isDarkTheme;
   }
 
   public send(form: NgForm): void {
