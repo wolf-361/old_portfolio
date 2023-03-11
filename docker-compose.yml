@@ -2,12 +2,12 @@ version: "3"
 
 services:
    frontend:
-       build: ghcr.io/wolf-361/portfolio:main
+       build: .
        restart: unless-stopped
        ports:
-          - 127.0.0.1:80:80
+          - 127.0.0.1:10000:80
    backend:
       build: backend
       restart: unless-stopped
       ports:
-         - 127.0.0.1:5000:5000
+         - 127.0.0.1:10001:5000
