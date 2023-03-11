@@ -5,3 +5,13 @@
 .skill-section {
     justify-content: space-evenly;
 }
+
+.tab-group {
+    height: calc(100% - 64px);
+}
+
+@media (max-width: 599px){
+    .tab-group {
+        height: calc(100% - 56px);
+    }
+}
