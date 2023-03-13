@@ -29,7 +29,7 @@
                     <div *ngIf="project.skills != null">
                         <h4>Compétences mobilisés</h4>
                         <div class="p-lg-1 d-flex flex-wrap justify-content-around">
-                            <app-icons *ngFor="let skill of project.skills" class="m-3 m-md-4 mat-elevation-z3 rounded-2 flex-basis-15" [title]="skill.title"
+                            <app-icons *ngFor="let skill of project.skills" class="m-3 m-md-4 mat-elevation-z3 rounded-2 flex-basis-15 bg-light bg-opacity-25" [title]="skill.title"
                                 [iconPath]="skill.iconPath"></app-icons>
                         </div>
                     </div>
