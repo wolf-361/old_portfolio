@@ -1,7 +1,13 @@
-.h-90 {
-    height: 90%;
+.tab-group {
+    height: calc(100% - 64px);
 }
 
-.skill-section {
-    justify-content: space-evenly;
+.flex-basis-15 {
+    flex-basis: 15%;
+}
+
+@media (max-width: 599px){
+    .tab-group {
+        height: calc(100% - 56px);
+    }
 }

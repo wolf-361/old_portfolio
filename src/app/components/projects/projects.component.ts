@@ -8,6 +8,49 @@ import { Component } from '@angular/core';
 export class ProjectsComponent {
   public projects = [
     {
+      title: 'ToutdouxList - (en cours)',
+      description: 'Application web et mobile de gestion de tâches et de notes',
+      list: [
+        'Développement d\'une application web et mobile avec Ionic Angular',
+        'Design de l\'application avec Penpot',
+        'Backend ExpressJS pour la gestion des utilisateurs et des tâches',
+        'Base de données MariaDB',
+        'Self hosting eventuel avec disponibilité sur IOS et Android',
+      ],
+      skills: [
+        {
+          title: 'Javascript',
+          iconPath: '../assets/icons/javascript.ico',
+        },
+        {
+          title: 'Ionic',
+          iconPath: '../assets/icons/ionic.ico',
+        },
+        {
+          title: 'Angular',
+          iconPath: '../assets/icons/angular.ico',
+        },
+        {
+          title: 'ExpressJS',
+          iconPath: '../assets/icons/expressjs.png',
+        },
+        {
+          title: 'MariaDB',
+          iconPath: '../assets/icons/mariadb.png',
+        },
+        {
+          title: 'Penpot',
+          iconPath: '../assets/icons/penpot.png',
+        },
+        {
+          title: 'GitHub',
+          iconPath: '../assets/icons/github.ico',
+        },
+      ],
+      link: null,
+      github: 'https://github.com/wolf-361/toutdouxlist',
+    },
+    {
       title: 'portfolio',
       description: 'Ce site est mon portfolio',
       list: [
@@ -26,8 +69,12 @@ export class ProjectsComponent {
           iconPath: '../assets/icons/angular.ico',
         },
         {
+          title: 'Angular Material',
+          iconPath: '../assets/icons/materialdesign.png',
+        },
+        {
           title: 'ExpressJS',
-          iconPath: '../assets/icons/express.ico',
+          iconPath: '../assets/icons/expressjs.png',
         },
         {
           title: 'GitHub',
@@ -50,6 +97,14 @@ export class ProjectsComponent {
         {
           title: 'Docker',
           iconPath: '../assets/icons/docker.ico',
+        },
+        {
+          title: 'Ubuntu',
+          iconPath: '../assets/icons/ubuntu.ico',
+        },
+        {
+          title: 'Linux',
+          iconPath: '../assets/icons/linux.ico',
         },
       ],
       link: null,
@@ -77,7 +132,7 @@ export class ProjectsComponent {
         },
         {
           title: 'Anglais',
-          iconPath: '../assets/icons/canada .ico',
+          iconPath: '../assets/icons/canada.ico',
         },
       ],
       link: 'https://devpost.com/software/studently',
