@@ -1,25 +1,25 @@
 <mat-tab-group class="tab-group"> <!-- TODO put 75% only on desktop-->
     <mat-tab label="Développement" class="mat-elevation-z11">
-        <div class="p-lg-5 d-flex flex-wrap skill-section">
-            <app-icons *ngFor="let skill of devSkills" class="m-2 mat-elevation-z3 rounded-2" [title]="skill.title"
+        <div class="p-lg-5 d-flex flex-wrap justify-content-around">
+            <app-icons *ngFor="let skill of devSkills" class="m-3 m-md-4 mat-elevation-z3 rounded-2 flex-basis-15" [title]="skill.title"
                 [iconPath]="skill.iconpath"></app-icons>
         </div>
     </mat-tab>
     <mat-tab label="Réseaux">
-        <div class="p-lg-5 d-flex flex-wrap skill-section">
-            <app-icons *ngFor="let skill of networkSkills" class="m-2 mat-elevation-z3 rounded-2" [title]="skill.title"
+        <div class="p-lg-5 d-flex flex-wrap justify-content-around">
+            <app-icons *ngFor="let skill of networkSkills" class="m-3 m-md-4 mat-elevation-z3 rounded-2 flex-basis-15" [title]="skill.title"
                 [iconPath]="skill.iconpath"></app-icons>
         </div>
     </mat-tab>
     <mat-tab label="Outils">
-        <div class="p-lg-5 d-flex flex-wrap skill-section">
-            <app-icons *ngFor="let skill of toolSkills" class="m-2 mat-elevation-z3 rounded-2" [title]="skill.title"
+        <div class="p-lg-5 d-flex flex-wrap justify-content-around">
+            <app-icons *ngFor="let skill of toolSkills" class="m-3 m-md-4 mat-elevation-z3 rounded-2 flex-basis-15" [title]="skill.title"
                 [iconPath]="skill.iconpath"></app-icons>
         </div>
     </mat-tab>
     <mat-tab label="langues">
-        <div class="p-lg-5 d-flex flex-wrap skill-section">
-            <app-icons *ngFor="let skill of langagesSkills" class="m-2 mat-elevation-z3 rounded-2" [title]="skill.title"
+        <div class="p-lg-5 d-flex flex-wrap justify-content-around">
+            <app-icons *ngFor="let skill of langagesSkills" class="m-3 m-md-4 mat-elevation-z3 rounded-2 flex-basis-15" [title]="skill.title"
                 [iconPath]="skill.iconpath"></app-icons>
         </div>
     </mat-tab>

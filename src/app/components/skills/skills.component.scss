@@ -2,12 +2,12 @@
     height: 90%;
 }
 
-.skill-section {
-    justify-content: space-evenly;
-}
-
 .tab-group {
     height: calc(100% - 64px);
+}
+
+.flex-basis-15 {
+    flex-basis: 15%;
 }
 
 @media (max-width: 599px){
