@@ -2,13 +2,15 @@
     <h1 id="contact-title">Contact</h1>
 
     <div *ngIf="!resolved; else email" class="d-flex flex-column justify-content-center align-items-center">
-        <h3 class="m-4 text-center col-12 col-lg-6 ">Pour des raisons de sécurité, merci de remplir le captcha afin de voir mon adresse mail</h3>
+        <h3 class="m-4 text-center col-12 col-lg-6 ">Pour des raisons de sécurité, merci de remplir le captcha afin de
+            voir mon adresse mail</h3>
         <form #form="ngForm">
-            <re-captcha id="recaptcha" *ngIf="isDarkTheme | async; else light" theme="dark" #recaptcha="ngModel"
-                [ngModel]="token" required
+            <re-captcha id="recaptcha" *ngIf="isDarkTheme | async; else light" [theme]="'dark'" name="recaptcha"
+                #recaptcha="ngModel" [(ngModel)]="token" required
                 [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
             <ng-template #light>
-                <re-captcha id="recaptcha" theme="light" #recaptcha="ngModel" [ngModel]="token" required
+                <re-captcha id="recaptcha" [theme]="'light'" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token"
+                    required
                     [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
             </ng-template>
         </form>
@@ -17,6 +19,9 @@
     <ng-template #email>
         <div class="d-flex flex-column justify-content-center align-items-center">
             <h3>Email : {{this.emailAdress}}</h3>
+            <a mat-button href="mailto:{{this.emailAdress}}" class="m-2">
+                Envoyer un courriel
+            </a>
         </div>
     </ng-template>
 </div>
