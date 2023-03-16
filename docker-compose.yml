@@ -3,11 +3,13 @@ version: "3"
 services:
    frontend:
        build: .
+       container_name: portfolio_front
        restart: unless-stopped
        ports:
           - 127.0.0.1:10000:80
    backend:
       build: backend
+      container_name: portfolio_back
       restart: unless-stopped
       ports:
          - 127.0.0.1:10001:5000
